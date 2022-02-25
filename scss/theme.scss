@@ -113,15 +113,15 @@ $screenwidth: 750;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
     @media (max-width:1024px) {
         flex-direction: column;
     }
 }
 .content-left,.content-right{
-    @media (max-width:1200px) {
     flex: 0 0 50%;
-    max-width: 50%;        
-    }
+    max-width: 50%; 
 
     @media (max-width:1024px) {
         max-width: 100%;
@@ -138,7 +138,7 @@ $screenwidth: 750;
         font-weight: 600;
         font-size: 56px;
         @media (max-width:568px) {
-            font-size: pxToVw(64);
+            font-size: pxToVw(56);
         }
     }
     .desc{
@@ -158,15 +158,20 @@ $screenwidth: 750;
         flex-direction: column;  
     }
     .btn-group{
-        display: flex;
+        display: inline-flex;
+        vertical-align: middle;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         margin-bottom: 3.5rem;
+        width: 100%;
+        @media (max-width:568px){
+            width: auto;
+        }
         .btn+.btn{
             margin-left: 1.5rem;
         }
-        @media (max-width:1024px) {
+        @media (max-width:568px) {
             flex-direction: column;  
             .btn+.btn{
                 margin: 0;
@@ -206,6 +211,10 @@ $screenwidth: 750;
         width:32px;
         height: 32px;
         transition: all .3s; 
+        @media (max-width:568px) {
+            width:pxToVw(64);
+            height: pxToVw(64);
+        }
     }
 }
 .icon-android{
@@ -221,6 +230,10 @@ $screenwidth: 750;
         display: inline-block;
         width:32px;
         height: 32px;
+        @media (max-width:568px) {
+            width:pxToVw(64);
+            height: pxToVw(64);
+        }
     }
 }
 .btn{
@@ -231,14 +244,18 @@ $screenwidth: 750;
     font-size: 1.125rem;
     transition: all .3s;
     border-radius: 36px;
-    width: 232px;
+    width: 14.5rem;
     border: 2px solid #FF2767;
     color: #FF2767;
     @media (max-width:568px){
         margin: 0;
-        margin-top: 1.5rem;
+        // margin-top: 1.5rem;
         // display: inline-block;
-        width: 100%;
+        // width: 100%;
+        max-width: 14.5rem;
+        padding: pxToVw(24) pxToVw(32);
+        font-size: pxToVw(36);
+        // width: 100%;
     }
     &:hover{
         background: #FF2767;
